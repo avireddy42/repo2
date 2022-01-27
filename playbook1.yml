@@ -1,0 +1,10 @@
+---
+- hosts: localhost
+  become: true
+  tasks:
+  - name: Read file from s3 bucket
+    aws_s3: 
+      bucket= newfirstbucket1 
+      object= /secretsfilecode.txt 
+      dest=s3: /newfirstbucket1/secretsfilecode.txt 
+      mode= get
